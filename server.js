@@ -30,7 +30,7 @@ app.set("view engine", "handlebars");
 //connecting to MongoDB
 //mongoose.connect("mongodb://localhost/NewsDB");
 // If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
+var MONGODB_URI = process.env.MONGOLAB_BROWN_URI|| "mongodb://localhost/NewsDB";
 
 mongoose.connect(MONGODB_URI);
 // const MONGODB_URI =
