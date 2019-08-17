@@ -28,11 +28,18 @@ app.engine(
 app.set("view engine", "handlebars");
 
 //connecting to MongoDB
-//mongoose.connect("mongodb://localhost/NewsDB");
-// If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
-var MONGODB_URI = process.env.MONGOLAB_BROWN_URI|| "mongodb://localhost/NewsDB";
 
-mongoose.connect(MONGODB_URI);
+// If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
+
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/NewsDB";
+
+console.log("MONGO LAB", MONGODB_URI);
+
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
+
+// var MONGODB_URI = process.env.MONGOLAB_BROWN_URI|| "mongodb://localhost/NewsDB";
+
+// mongoose.connect(MONGODB_URI);
 // const MONGODB_URI =
 //   process.env.MONGODB_URI || "mongodb://localhost/NewsDB";
 // mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
